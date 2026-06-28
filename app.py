@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from database.database import connect_db, create_table
 from crawler.crawler import insert_environment_data
 from analysis.analysis import analyze_data
@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    conn = connect_db()
+    return render_template("index.html")
 
     if conn:
         conn.close()
@@ -47,5 +47,5 @@ def analyze():
 import os
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port)
