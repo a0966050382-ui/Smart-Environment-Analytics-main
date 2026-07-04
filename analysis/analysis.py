@@ -19,14 +19,20 @@ def analyze_data():
         if not rows:
             return None
 
-        temperatures = [row[0] for row in rows]
-        humidities = [row[1] for row in rows]
-        aqis = [row[2] for row in rows]
+        temperatures = [float(row[0]) for row in rows]
+        humidities = [float(row[1]) for row in rows]
+        aqis = [float(row[2]) for row in rows]
 
         result = {
-            "avg_temp": sum(temperatures) / len(temperatures),
-            "avg_humidity": sum(humidities) / len(humidities),
-            "avg_aqi": sum(aqis) / len(aqis),
+            "total_records": len(rows),
+
+            "avg_temp": round(sum(temperatures) / len(temperatures), 2),
+            "max_temp": max(temperatures),
+            "min_temp": min(temperatures),
+
+            "avg_humidity": round(sum(humidities) / len(humidities), 2),
+
+            "avg_aqi": round(sum(aqis) / len(aqis), 2),
             "max_aqi": max(aqis),
             "min_aqi": min(aqis)
         }

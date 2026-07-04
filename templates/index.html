@@ -1,46 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
+    <meta charset="UTF-8">
     <title>智慧環境數據收集與分析平台</title>
+
     <style>
-        body {
+
+        body{
             font-family: Arial, sans-serif;
-            background-color: #f4f7fb;
-            text-align: center;
-            margin-top: 80px;
+            background:#eef5f9;
+            text-align:center;
+            margin-top:60px;
         }
 
-        .container {
-            background: white;
-            width: 500px;
-            margin: auto;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+        .container{
+            width:600px;
+            margin:auto;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 0 15px rgba(0,0,0,.15);
         }
 
-        h1 {
-            color: #2c3e50;
+        h1{
+            color:#2c3e50;
         }
 
-        p {
-            font-size: 22px;
-            margin: 20px 0;
+        h2{
+            color:#3498db;
         }
 
-        .status {
-            color: green;
-            font-weight: bold;
+        p{
+            font-size:20px;
         }
+
+        a{
+            display:inline-block;
+            margin:12px;
+            padding:12px 25px;
+            text-decoration:none;
+            color:white;
+            background:#3498db;
+            border-radius:8px;
+        }
+
+        a:hover{
+            background:#2980b9;
+        }
+
+        .status{
+            color:green;
+            font-weight:bold;
+            font-size:18px;
+        }
+
     </style>
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>智慧環境數據收集與分析平台</h1>
-        <p>🌡 即時溫度：29.5°C</p>
-        <p>💧 即時濕度：78%</p>
-        <p>🌫 AQI：42</p>
-        <p class="status">🟢 系統狀態：Online</p>
-    </div>
+
+<div class="container">
+
+<h1>🌍 Smart Environment Analytics</h1>
+
+<h2>智慧環境數據收集與分析平台</h2>
+
+<hr>
+
+<p>
+本系統利用 <b>Selenium</b> 自動擷取天氣網站資料，
+並將資料儲存至 <b>PostgreSQL</b>，
+最後透過 <b>Flask</b> 進行資料分析與展示。
+</p>
+
+<p class="status">
+🟢 System Online
+</p>
+
+<br>
+
+<a href="/insert-data">📥 Collect Data</a>
+
+<a href="/analyze">📊 Analyze Data</a>
+
+</div>
+
 </body>
 </html>
