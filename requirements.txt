@@ -1,6 +1,7 @@
 Flask
 pandas
 numpy
-psycopg2
+psycopg2-binary
 selenium
+webdriver-manager
 gunicorn
